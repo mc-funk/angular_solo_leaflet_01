@@ -1,0 +1,15 @@
+
+<div class="container" ng-controller="WelcomeController">
+
+    <div class="col-md-offset-2">
+        <div>
+            <h1>{{heading + message}}</h1>
+            <!--Expression notation This will change depending on what is in the input. -->
+            <input ng-model="name" tag="text" placeholder="Enter name here">
+            <!--name will represent data to be provided in the input field. NG Model will bind the contents to the variable "name.-->
+        </div>
+        <button ng-click="updateMessage()" class="btn btn-info">Update</button>
+        <!--no reference to scope is needed to use updateMessage()-->
+        <button ng-click="goodByeMessage()" class="btn btn-info">Goodbye</button>
+    </div>
+</div>

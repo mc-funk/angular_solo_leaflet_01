@@ -1,3 +1,5 @@
+//Scott's gruntfile templategit i
+
 module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
@@ -7,7 +9,7 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'client//scripts/app.js',
+                src: 'client/scripts/app.js',
                 dest: 'public/javascripts/app.min.js'
             }
         },
@@ -37,6 +39,23 @@ module.exports = function(grunt) {
                 ],
                 "dest": "public/vendor/"
             },
+            angular_leaflet_directive: {
+                expand: true,
+                cwd: "client/vendor/",
+                src: [
+                    "angular_leaflet_directive/angular-leaflet-directive.min.js",
+                    "angular_leaflet_directive/angular-leaflet-directive_dev_mapped.js",
+                ],
+                "dest": "public/vendor/"
+            },
+            japan_geo: {
+                expand: true,
+                cwd: "client/vendor/",
+                src: [
+                    "japan_geo/japan.json"
+                ],
+                "dest": "public/vendor/"
+            },
             styles: {
                 expand: true,
                 cwd: "client",
@@ -49,7 +68,8 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: "client",
                 src: [
-                    "views/sample.html"
+                    "views/userinfo.html",
+                    "views/map.html"
                 ],
                 "dest": "public/"
             }
